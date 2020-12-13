@@ -15,9 +15,9 @@ class CanonDefensivo
 private:
     float d;
     float Hd;
-    float Xd = 0;
+    float Xd;
     float Yd;
-    float d0 = 0.05*d;
+    float d0;
 public:
     CanonDefensivo();
     float getD() const;
@@ -25,8 +25,14 @@ public:
     void setD(float value);
 
     float getHd() const;
-    void setHd();
     void setHd(float value);
+    void setHd();
+
+    float getXd() const;
+
+
+    float getYd() const;
+
 
 
 };

@@ -4,6 +4,7 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include "canondefensivo.h"
 
 #define g 9.81
 #define pi 3.141617
@@ -15,9 +16,9 @@ class canonofensivo
 private:
     float d;
     float Ho;
-    float Xo = 0;
+    float Xo;
     float Yo;
-    float d0 = 0.05*d;
+    float d0;
 
 public:
     canonofensivo();
@@ -28,6 +29,15 @@ public:
     float getHo() const;
     void setHo();
     void setHo(float value);
+
+    void ImprResultados(int angulo, int V0o, float x, float y, int t);
+
+
+    void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
+    CanonDefensivo *disparoD;
+    //void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
+
+
 
 };
 
