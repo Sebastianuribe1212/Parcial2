@@ -108,13 +108,16 @@ compiler_clean:
 
 ####### Compile
 
-debug/canondefensivo.o: ../Parcial2/canondefensivo.cpp ../Parcial2/canondefensivo.h
+debug/canondefensivo.o: ../Parcial2/canondefensivo.cpp ../Parcial2/canondefensivo.h \
+		../Parcial2/canonofensivo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\canondefensivo.o ..\Parcial2\canondefensivo.cpp
 
-debug/canonofensivo.o: ../Parcial2/canonofensivo.cpp ../Parcial2/canonofensivo.h
+debug/canonofensivo.o: ../Parcial2/canonofensivo.cpp ../Parcial2/canonofensivo.h \
+		../Parcial2/canondefensivo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\canonofensivo.o ..\Parcial2\canonofensivo.cpp
 
-debug/main.o: ../Parcial2/main.cpp 
+debug/main.o: ../Parcial2/main.cpp ../Parcial2/canondefensivo.h \
+		../Parcial2/canonofensivo.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\Parcial2\main.cpp
 
 ####### Install

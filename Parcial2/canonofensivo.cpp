@@ -1,4 +1,14 @@
 #include "canonofensivo.h"
+float canonofensivo::getXo() const
+{
+    return Xo;
+}
+
+float canonofensivo::getYo() const
+{
+    return Yo;
+}
+
 canonofensivo::canonofensivo()
 {
     //setHo();
@@ -62,7 +72,7 @@ void canonofensivo::DispOfensivo(int Voo)
     int V0o = 0;
     int t = 0;
     int angle = 0;
-
+    CanonDefensivo *disparoD;
     disparoD = new CanonDefensivo();
     for(V0o = Voo; ; V0o += 5){
         for(angle = 0; angle < 90; angle++){
@@ -73,7 +83,7 @@ void canonofensivo::DispOfensivo(int Voo)
             for(t = 0; ; t++){
                 x = Vxo*t;
                 y = (Yo + Vy0*t) -(0.5*g*(t*t));
-                if(sqrt(pow((d - x),2)+pow((Yo - y),2)) < d0){
+                if(sqrt(pow((disparoD->getXd() - x),2)+pow((disparoD->getYd() - y),2)) < d0){
                     if(y<0) y = 0;
                     ImprResultados(angle, V0o, x, y, t);
                     flag += 1;

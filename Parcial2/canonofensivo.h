@@ -14,6 +14,7 @@ using namespace std;
 class canonofensivo
 {
 private:
+
     float d;
     float Ho;
     float Xo;
@@ -34,11 +35,13 @@ public:
 
 
     void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
-    CanonDefensivo *disparoD;
+
     //void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
 
 
 
+    float getXo() const;
+    float getYo() const;
 };
 
 #endif // CANONOFENSIVO_H

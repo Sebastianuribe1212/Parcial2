@@ -4,6 +4,8 @@
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include "canonofensivo.h"
+
 
 #define g 9.81
 #define pi 3.141617
@@ -13,6 +15,8 @@ using namespace std;
 class CanonDefensivo
 {
 private:
+
+    vector <int>angulos;
     float d;
     float Hd;
     float Xd;
@@ -33,8 +37,10 @@ public:
 
     float getYd() const;
 
-    ImprResultados(int angulo, int V0o, float x, float y, int t);
+    void ImprResultados(int angulo, int V0o, float x, float y, int t);
 
+    void DispDefensivos(int Voo);
+    void DispDefensivos2(int Voo);
 
 };
 

@@ -59,6 +59,52 @@ void CanonDefensivo::ImprResultados(int angulo, int V0o, float x, float y, int t
 
 }
 
+void CanonDefensivo::DispDefensivos(int Voo)
+{
+    int flag = 0;
+    float x,y;
+    float Vxo,Vy0;
+    int V0o = 0;
+    int t = 0;
+    int angle = 0;
+    canonofensivo *disparoO;
+    disparoO = new canonofensivo();
+    for(V0o = Voo; ; V0o += 5){
+        for(angle = 0; angle < 90; angle++){
+            Vxo = V0o*cos((angle)*pi/180);
+            Vy0 = V0o*sin((angle)*pi/180);
+            x = 0.0;
+            y = 0.0;
+            for(t = 0; ; t++){
+                x = Vxo*t;
+                y = Yd + Vy0*t -(0.5*g*t*t);
+                if(sqrt(pow((disparoO->getD() - x),2)+pow((disparoO->getYo() - y),2)) < d0){
+                    if(y<0) y = 0;
+                    ImprResultados(angle, V0o, x, y, t);
+                    flag += 1;
+                    V0o += 50;
+                    break;
+                }
+                if(y < 0){
+                    break;
+                }
+            }
+            if(flag == 3) break;
+
+
+        }
+        if(flag == 3) break;
+    }
+    if(flag != 3){
+        cout << "No impacto en los disparos esperados"<< endl;
+    }
+}
+
+
+
+
+
+
 /*
 void CanonDefensivo::setHd(float value)
 {

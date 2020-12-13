@@ -13,7 +13,14 @@ int main()
     canonofensivo *ofensivo = new canonofensivo;
     CanonDefensivo *defensivo = new CanonDefensivo;
 
+
+    cout << "---------Disparos Ofensivos-----------"<<endl;
+    cout << endl;
     ofensivo->DispOfensivo(Voo);
+
+    cout << "---------Disparos Defensivos-----------"<<endl;
+    cout << endl;
+    defensivo->DispDefensivos(Voo);
 
     return 0;
 }
