@@ -36,6 +36,7 @@ public:
 
 
     void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
+    void DispOfensivo1(int Voo,int angleoo,int Vooo);
 
     //void DispOfensivo(int Voo);//disparo ofensivo con valores por defecto
 
@@ -45,6 +46,8 @@ public:
     float getYo() const;
     vector<int> getVooo1() const;
     vector<int> getAngleoo1() const;
+    float getD0() const;
+
 };
 
 #endif // CANONOFENSIVO_H

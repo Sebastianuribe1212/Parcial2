@@ -39,7 +39,7 @@ int main()
 
     //disparos desde el defensivo para cada disparo del ofensivo (sin restricción)
     cout << "************ Disparos Defensivos contra el disparo Ofensivo SIN restriccion ************"<<endl;
-    for(auto n = anguloO.rbegin();n !=anguloO.rend();n++ )
+    /*for(auto n = anguloO.rbegin();n !=anguloO.rend();n++ )
     {
         for (auto l = velO.rbegin(); l != velO.rend(); l++)
         {
@@ -60,7 +60,7 @@ int main()
 
     aux = 0;
     aux2 = 1;
-    aux3 = 1;
+    aux3 = 1;*/
 
      //disparos desde el defensivo para cada disparo del ofensivo (CON restricción)
     cout << "************ Disparos Defensivos contra el disparo Ofensivo CON restriccion ************"<<endl;
@@ -79,8 +79,9 @@ int main()
         cout <<"_____Datos del tiro Ofensivo (despues de 2 segundos):_______"<<endl;
         cout << "Disparo con un angulo de " << *n << " grados" << endl;
         cout << "Disparo con velocidad incial " << aux << endl;
-        defensivo->DispDefensivos2(Voo, *n, aux);
+        defensivo->DispDefensivos3(Voo, *n, aux);
     }
+
 
     return 0;
 }

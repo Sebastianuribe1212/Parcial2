@@ -1,5 +1,10 @@
 #include "canonofensivo.h"
 
+float canonofensivo::getD0() const
+{
+    return d0;
+}
+
 canonofensivo::canonofensivo()
 {
 
