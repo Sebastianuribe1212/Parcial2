@@ -1,4 +1,17 @@
 #include "canonofensivo.h"
+
+canonofensivo::canonofensivo()
+{
+
+    d = 800;
+    Ho =100;
+    d0 = 0.05*d;
+    Xo = 0;
+    Yo = Ho;
+
+
+}
+
 float canonofensivo::getXo() const
 {
     return Xo;
@@ -9,49 +22,28 @@ float canonofensivo::getYo() const
     return Yo;
 }
 
-canonofensivo::canonofensivo()
+vector<int> canonofensivo::getVooo1() const
 {
-    //setHo();
-    //setD();
-    d = 800;
-    Ho =100;
-    d0 = 0.05*d;
-    Xo = 0;
-    Yo = Ho;
-
-
+    return Vooo1;
 }
+
+vector<int> canonofensivo::getAngleoo1() const
+{
+    return angleoo1;
+}
+
+
 
 float canonofensivo::getD() const
 {
     return d;
 }
 
-void canonofensivo::setD()
-{
-    d = 800;
-}
-/*
-void canonofensivo::setD(float value)
-{
-    d = value;
-}
-*/
+
 float canonofensivo::getHo() const
 {
     return Ho;
 }
-
-void canonofensivo::setHo()
-{
-    Ho =100;
-    Yo = Ho;
-}
-/*
-void canonofensivo::setHo(float value)
-{
-    Ho = value;
-}*/
 
 void canonofensivo::ImprResultados(int angulo, int V0o, float x, float y, int t)
 {
@@ -86,6 +78,8 @@ void canonofensivo::DispOfensivo(int Voo)
                 if(sqrt(pow((disparoD->getXd() - x),2)+pow((disparoD->getYd() - y),2)) < d0){
                     if(y<0) y = 0;
                     ImprResultados(angle, V0o, x, y, t);
+                    Vooo1.push_back(V0o);
+                    angleoo1.push_back(angle);
                     flag += 1;
                     V0o += 50;
                     break;

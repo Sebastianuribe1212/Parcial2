@@ -14,7 +14,8 @@ using namespace std;
 class canonofensivo
 {
 private:
-
+    vector <int> Vooo1;
+    vector <int> angleoo1;
     float d;
     float Ho;
     float Xo;
@@ -42,6 +43,8 @@ public:
 
     float getXo() const;
     float getYo() const;
+    vector<int> getVooo1() const;
+    vector<int> getAngleoo1() const;
 };
 
 #endif // CANONOFENSIVO_H
