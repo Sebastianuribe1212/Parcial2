@@ -76,6 +76,8 @@ void CanonDefensivo::DispDefensivos(int Voo)
                 if(sqrt(pow((disparoO->getD() - x),2)+pow((disparoO->getYo() - y),2)) < d0){
                     if(y<0) y = 0;
                     ImprResultados(angle, V0o, x, y, t);
+                    vooo2.push_back(V0o);
+                    angleoo2.push_back(angle);
                     flag += 1;
                     V0o += 50;
                     break;
@@ -109,8 +111,8 @@ void CanonDefensivo::DispDefensivos2(int Voo, int angleoo, int Vooo)
     Vyoo = Vooo*sin((angleoo)*pi/180);
     for(V0o = Voo; ; V0o += 5){
         for(angle = 0; angle < 90; angle++){
-            Vxo = V0o*cos((angle+90)*pi/180);
-            Vy0 = V0o*sin((angle+90)*pi/180);
+            Vxo = V0o*cos((angle)*pi/180);
+            Vy0 = V0o*sin((angle)*pi/180);
             x = 0.0;
             y = 0.0;
             x2 = 0.0;
@@ -164,8 +166,8 @@ void CanonDefensivo::DispDefensivos3(int Voo, int angleoo, int Vooo)
     Vyoo = Vooo*sin((angleoo)*pi/180);
     for(V0o = Voo; ; V0o += 5){
         for(angle = 0; angle < 90; angle++){
-            Vxo = V0o*cos((angle+90)*pi/180);
-            Vy0 = V0o*sin((angle+90)*pi/180);
+            Vxo = V0o*cos((angle)*pi/180);
+            Vy0 = V0o*sin((angle)*pi/180);
             x = 0.0;
             y = 0.0;
             x2 = 0.0;

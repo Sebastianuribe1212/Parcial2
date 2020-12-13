@@ -37,9 +37,13 @@ int main()
     anguloO = ofensivo->getAngleoo1();
     velO = ofensivo->getVooo1();
 
+    //obtener vectores de angulo y velocidad para hacer disparos Defensivos desde el cañon Ofensivo
+    anguloD = defensivo->getAngleoo2();
+    velD = defensivo->getVooo2();
+/*
     //disparos desde el defensivo para cada disparo del ofensivo (sin restricción)
     cout << "************ Disparos Defensivos contra el disparo Ofensivo SIN restriccion ************"<<endl;
-    /*for(auto n = anguloO.rbegin();n !=anguloO.rend();n++ )
+    for(auto n = anguloO.rbegin();n !=anguloO.rend();n++ )
     {
         for (auto l = velO.rbegin(); l != velO.rend(); l++)
         {
@@ -60,7 +64,7 @@ int main()
 
     aux = 0;
     aux2 = 1;
-    aux3 = 1;*/
+    aux3 = 1;
 
      //disparos desde el defensivo para cada disparo del ofensivo (CON restricción)
     cout << "************ Disparos Defensivos contra el disparo Ofensivo CON restriccion ************"<<endl;
@@ -80,8 +84,31 @@ int main()
         cout << "Disparo con un angulo de " << *n << " grados" << endl;
         cout << "Disparo con velocidad incial " << aux << endl;
         defensivo->DispDefensivos3(Voo, *n, aux);
-    }
+    }*/
 
+    aux = 0;
+    aux2 = 1;
+    aux3 = 1;
+
+    cout << "************ Disparos ofensivos contra el disparo Defensivo ************"<<endl;
+    for(auto o = anguloD.rbegin();o !=anguloD.rend();o++ )
+    {
+
+        for (auto l = velD.rbegin(); l != velD.rend(); l++)
+        {
+            if(aux2 == aux3){
+                aux = *l;
+                break;
+            }
+            aux3++;
+        }
+        aux2 ++;
+        aux3 =1;
+        cout <<"_____Datos del tiro Defensivo (despues de 2 segundos):_______"<<endl;
+        cout << "Disparo con un angulo de " << *o << " grados" << endl;
+        cout << "Disparo con velocidad incial " << aux << endl;
+            ofensivo->DispOfensivo1(Voo, *o, aux);
+    }
 
     return 0;
 }
