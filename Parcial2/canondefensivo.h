@@ -33,6 +33,7 @@ public:
 
     float getYd() const;
 
+    ImprResultados(int angulo, int V0o, float x, float y, int t);
 
 
 };

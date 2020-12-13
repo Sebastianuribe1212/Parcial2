@@ -1,10 +1,13 @@
 #include "canonofensivo.h"
 canonofensivo::canonofensivo()
 {
-    setHo();
-    setD();
+    //setHo();
+    //setD();
+    d = 800;
+    Ho =100;
     d0 = 0.05*d;
     Xo = 0;
+    Yo = Ho;
 
 
 }
@@ -18,12 +21,12 @@ void canonofensivo::setD()
 {
     d = 800;
 }
-
+/*
 void canonofensivo::setD(float value)
 {
     d = value;
 }
-
+*/
 float canonofensivo::getHo() const
 {
     return Ho;
@@ -34,11 +37,11 @@ void canonofensivo::setHo()
     Ho =100;
     Yo = Ho;
 }
-
+/*
 void canonofensivo::setHo(float value)
 {
     Ho = value;
-}
+}*/
 
 void canonofensivo::ImprResultados(int angulo, int V0o, float x, float y, int t)
 {
@@ -69,8 +72,8 @@ void canonofensivo::DispOfensivo(int Voo)
             y = 0.0;
             for(t = 0; ; t++){
                 x = Vxo*t;
-                y = Yo + Vy0*t -(0.5*g*t*t);
-                if(sqrt(pow((disparoD->getXd() - x),2)+pow((disparoD->getYd() - y),2)) < d0){
+                y = (Yo + Vy0*t) -(0.5*g*(t*t));
+                if(sqrt(pow((d - x),2)+pow((Yo - y),2)) < d0){
                     if(y<0) y = 0;
                     ImprResultados(angle, V0o, x, y, t);
                     flag += 1;
