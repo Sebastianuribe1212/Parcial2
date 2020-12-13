@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        canondefensivo.cpp \
+        canonofensivo.cpp \
         main.cpp
+
+HEADERS += \
+    canondefensivo.h \
+    canonofensivo.h
