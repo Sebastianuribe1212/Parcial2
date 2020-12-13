@@ -40,7 +40,7 @@ int main()
     //obtener vectores de angulo y velocidad para hacer disparos Defensivos desde el cañon Ofensivo
     anguloD = defensivo->getAngleoo2();
     velD = defensivo->getVooo2();
-/*
+
     //disparos desde el defensivo para cada disparo del ofensivo (sin restricción)
     cout << "************ Disparos Defensivos contra el disparo Ofensivo SIN restriccion ************"<<endl;
     for(auto n = anguloO.rbegin();n !=anguloO.rend();n++ )
@@ -84,7 +84,8 @@ int main()
         cout << "Disparo con un angulo de " << *n << " grados" << endl;
         cout << "Disparo con velocidad incial " << aux << endl;
         defensivo->DispDefensivos3(Voo, *n, aux);
-    }*/
+    }
+
 
     aux = 0;
     aux2 = 1;
